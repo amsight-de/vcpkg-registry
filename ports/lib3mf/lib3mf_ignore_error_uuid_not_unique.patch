@@ -1,0 +1,13 @@
+diff --git a/Source/Model/Classes/NMR_Model.cpp b/Source/Model/Classes/NMR_Model.cpp
+index 3a92be98..bac694f4 100644
+--- a/Source/Model/Classes/NMR_Model.cpp
++++ b/Source/Model/Classes/NMR_Model.cpp
+@@ -383,7 +383,7 @@ namespace NMR {
+ 
+ 			auto it = usedUUIDs.find(value);
+ 			if (it != usedUUIDs.end()) {
+-				throw CNMRException(NMR_ERROR_UUID_NOT_UNIQUE);
++				// throw CNMRException(NMR_ERROR_UUID_NOT_UNIQUE);
+ 			}
+ 			else {
+ 				usedUUIDs[value] = pUUID;
