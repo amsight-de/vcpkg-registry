@@ -1,0 +1,5 @@
+config-cxx provides CMake targets:
+
+  find_package(config-cxx CONFIG REQUIRED)
+  target_link_libraries(3MFImporter PRIVATE config-cxx::config-cxx)
+
