@@ -8,6 +8,7 @@ vcpkg_from_github(
     PATCHES
     lib3mf_vcpkg.patch
     lib3mf_ignore_error_uuid_not_unique.patch
+    lib3mf_return_empty_object_for_missing_content.patch
 )
 
 vcpkg_cmake_configure(

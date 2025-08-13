@@ -1,0 +1,36 @@
+diff --git a/Source/Model/Reader/v093/NMR_ModelReaderNode093_Object.cpp b/Source/Model/Reader/v093/NMR_ModelReaderNode093_Object.cpp
+index 14860a03..cabe19de 100644
+--- a/Source/Model/Reader/v093/NMR_ModelReaderNode093_Object.cpp
++++ b/Source/Model/Reader/v093/NMR_ModelReaderNode093_Object.cpp
+@@ -83,8 +83,11 @@ namespace NMR {
+ 		parseContent(pXMLReader);
+ 
+ 		// Check, if we have created an object
+-		if (!m_pObject.get())
+-			throw CNMRException(NMR_ERROR_MISSINGOBJECTCONTENT);
++		if (!m_pObject.get()) {
++			PMesh pMesh = std::make_shared<CMesh>();
++			m_pObject = std::make_shared<CModelMeshObject>(m_nID, m_pModel, std::make_shared<CMesh>());
++			m_pModel->addResource(m_pObject);
++		}
+ 
+ 		// Set Object Parameters
+ 		m_pObject->setName(m_sName);
+diff --git a/Source/Model/Reader/v100/NMR_ModelReaderNode100_Object.cpp b/Source/Model/Reader/v100/NMR_ModelReaderNode100_Object.cpp
+index 2fca11df..da9c00f1 100644
+--- a/Source/Model/Reader/v100/NMR_ModelReaderNode100_Object.cpp
++++ b/Source/Model/Reader/v100/NMR_ModelReaderNode100_Object.cpp
+@@ -94,8 +94,11 @@ namespace NMR {
+ 		parseContent(pXMLReader);
+ 
+ 		// Check, if we have created an object
+-		if (!m_pObject.get())
+-			throw CNMRException(NMR_ERROR_MISSINGOBJECTCONTENT);
++		if (!m_pObject.get()) {
++			PMesh pMesh = std::make_shared<CMesh>();
++			m_pObject = std::make_shared<CModelMeshObject>(m_nID, m_pModel, std::make_shared<CMesh>());
++			m_pModel->addResource(m_pObject);
++		}
+ 
+ 		// Set Object Parameters
+ 		m_pObject->setName(m_sName);
