@@ -36,7 +36,7 @@ index 6a84ed3..8cbb31b 100644
 -add_subdirectory(externals/pugixml)
 -target_link_libraries(${LIBRARY_NAME} PUBLIC  pugixml)
 +find_package(pugixml CONFIG REQUIRED)
-+target_link_libraries(${LIBRARY_NAME} PUBLIC pugixml::static pugixml::pugixml)
++target_link_libraries(${LIBRARY_NAME} PUBLIC pugixml::pugixml)
  
  target_include_directories(
      ${LIBRARY_NAME}
@@ -98,3 +98,13 @@ index 0000000..6662ccb
 +include("${CMAKE_CURRENT_LIST_DIR}/config-cxx-targets.cmake")
 +
 +check_required_components(config-cxx)
+diff --git a/src/Config.cpp b/src/Config.cpp
+index 50b63cc..39b9158 100644
+--- a/src/Config.cpp
++++ b/src/Config.cpp
+@@ -3,4 +3,5 @@
+ #include <filesystem>
++#include <algorithm>
+ #include <iostream>
+ #include <optional>
+ #include <stdexcept>

@@ -1,6 +1,7 @@
 {
   "name": "config-cxx",
   "version": "1.0.0+1",
+  "port-version": 1,
   "description": "Config C++ organizes hierarchical configurations for your app deployments.",
   "dependencies": [
     "nlohmann-json",

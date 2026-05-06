@@ -2,7 +2,7 @@
   "default": {
     "config-cxx": {
       "baseline": "1.0.0+1",
-      "port-version": 0
+      "port-version": 1
     },
     "lib3mf": {
       "baseline": "2.5.0",
